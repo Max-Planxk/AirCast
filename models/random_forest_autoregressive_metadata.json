@@ -1,0 +1,38 @@
+{
+  "model_id": "random_forest_autoregressive",
+  "model_name": "Random Forest",
+  "feature_group": "Autoregressive",
+  "num_features": 15,
+  "feature_list": [
+    "pm25_current",
+    "pm25_lag_1",
+    "pm25_lag_2",
+    "pm25_lag_3",
+    "pm25_lag_6",
+    "pm25_lag_12",
+    "pm25_lag_24",
+    "pm25_rolling_mean_6h",
+    "pm25_rolling_std_6h",
+    "pm25_rolling_min_6h",
+    "pm25_rolling_max_6h",
+    "pm25_rolling_mean_24h",
+    "pm25_rolling_std_24h",
+    "pm25_rolling_min_24h",
+    "pm25_rolling_max_24h"
+  ],
+  "hyperparameters": {
+    "n_estimators": 100,
+    "max_depth": 16,
+    "min_samples_split": 8,
+    "min_samples_leaf": 4,
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "train_samples": 23001,
+  "val_samples": 5275,
+  "train_time_sec": 1.805,
+  "mae": 8.824,
+  "rmse": 14.7093,
+  "mae_improvement_pct": 0.47,
+  "rmse_improvement_pct": 3.32
+}

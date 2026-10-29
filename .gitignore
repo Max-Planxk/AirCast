@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Raw and processed datasets
+data/raw/*
+data/processed/*
+
+# Preserve folder placeholders
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Generated models (exclude large binary weights, retain experiment metadata)
+models/*.joblib
+!models/.gitkeep
+!models/*.json
+
+# Local artifacts
+.DS_Store
+*.log

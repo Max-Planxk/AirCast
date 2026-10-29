@@ -1,0 +1,19 @@
+{
+  "model_id": "persistence_baseline",
+  "model_name": "Persistence Baseline",
+  "feature_group": "Autoregressive (Current t)",
+  "num_features": 1,
+  "feature_list": [
+    "pm25_current"
+  ],
+  "hyperparameters": {
+    "strategy": "y_hat(t+1) = PM2.5(t)"
+  },
+  "train_samples": 23001,
+  "val_samples": 5275,
+  "train_time_sec": 0.0,
+  "mae": 8.8662,
+  "rmse": 15.2144,
+  "mae_improvement_pct": 0.0,
+  "rmse_improvement_pct": 0.0
+}

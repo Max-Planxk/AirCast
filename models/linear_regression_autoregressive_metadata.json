@@ -1,0 +1,34 @@
+{
+  "model_id": "linear_regression_autoregressive",
+  "model_name": "Linear Regression",
+  "feature_group": "Autoregressive",
+  "num_features": 15,
+  "feature_list": [
+    "pm25_current",
+    "pm25_lag_1",
+    "pm25_lag_2",
+    "pm25_lag_3",
+    "pm25_lag_6",
+    "pm25_lag_12",
+    "pm25_lag_24",
+    "pm25_rolling_mean_6h",
+    "pm25_rolling_std_6h",
+    "pm25_rolling_min_6h",
+    "pm25_rolling_max_6h",
+    "pm25_rolling_mean_24h",
+    "pm25_rolling_std_24h",
+    "pm25_rolling_min_24h",
+    "pm25_rolling_max_24h"
+  ],
+  "hyperparameters": {
+    "scaler": "StandardScaler",
+    "fit_intercept": true
+  },
+  "train_samples": 23001,
+  "val_samples": 5275,
+  "train_time_sec": 0.012,
+  "mae": 8.7009,
+  "rmse": 14.5652,
+  "mae_improvement_pct": 1.86,
+  "rmse_improvement_pct": 4.27
+}

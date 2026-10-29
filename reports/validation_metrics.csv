@@ -1,0 +1,8 @@
+model_id,model_name,feature_group,num_features,train_time_sec,mae,rmse,mae_improvement_pct,rmse_improvement_pct
+persistence_baseline,Persistence Baseline,Autoregressive (Current t),1,0.0,8.8662,15.2144,0.0,0.0
+linear_regression_autoregressive,Linear Regression,Autoregressive,15,0.012,8.7009,14.5652,1.86,4.27
+random_forest_autoregressive,Random Forest,Autoregressive,15,1.805,8.824,14.7093,0.47,3.32
+linear_regression_expanded,Linear Regression,Expanded,28,0.023,8.7372,14.418,1.45,5.23
+random_forest_expanded,Random Forest,Expanded,28,2.952,8.5835,14.2214,3.19,6.53
+linear_regression_full,Linear Regression,Full,38,0.038,8.9056,14.4665,-0.45,4.92
+random_forest_full,Random Forest,Full,38,4.033,8.427,14.005,4.95,7.95
