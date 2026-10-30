@@ -117,18 +117,20 @@ Predictors are organized into three cumulative tiers:
 
 ---
 
- 6. Model Development & Validation Results
-
+6. Model Development & Validation Results
 Candidate Architectures
-1. Persistence Baseline: Naive reference forecasting (zero learned parameters).
-2. Linear Regression: Ordinary Least Squares with `StandardScaler` fitted strictly on training data inside a `Pipeline`.
-3. Random Forest Regressor: 100 decision trees, `max_depth=16`, `min_samples_split=8`, `min_samples_leaf=4`, `random_state=42`.
-
- Validation Performance Comparison  March – October 2016
-
-| Model Architecture | Feature Group | Features | Training Time | Validation MAE gm^3| MAE vs. Baseline | Validation RMSE mg^3| RMSE vs. Baseline |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-The persistence baseline achieved a validation MAE of 8.8662 and RMSE of 15.2144. Linear Regression with 15 autoregressive features improved the MAE by 1.86% and RMSE by 4.27%, while Random Forest with the same features improved them by 0.47% and 3.32%, respectively. With 28 expanded features, Linear Regression achieved an MAE of 8.7372 and RMSE of 14.4180, representing improvements of 1.45% and 5.23%. Random Forest performed better with the expanded feature set, achieving an MAE of 8.5835 and RMSE of 14.2214, with improvements of 3.19% and 6.53%. Using all 38 features, Linear Regression recorded an MAE of 8.9056, which was 0.45% worse than the baseline, although its RMSE improved by 4.92%. The best performance was achieved by the full-feature Random Forest model, with an MAE of 8.4270 and RMSE of 14.0050, improving upon the persistence baseline by 4.95% and 7.95%, respectively. Therefore, the full-feature Random Forest was selected as the final model.
+1. Persistence Baseline: Naive reference forecasting with zero learned parameters.
+2. Linear Regression: Ordinary Least Squares with StandardScaler fitted strictly on training data using a Pipeline.
+3. Random Forest Regressor: 100 decision trees with max_depth=16, min_samples_split=8, min_samples_leaf=4, and random_state=42.
+Validation Performance Comparison (March–October 2016)
+Model Architecture	Feature Group	Features	Training Time	Validation MAE (µg/m³)	MAE vs. Baseline	Validation RMSE (µg/m³)	RMSE vs. Baseline
+Persistence Baseline	Autoregressive (t)	1	0.00s	8.8662	Baseline	15.2144	Baseline
+Linear Regression	Autoregressive	15	0.01s	8.7009	+1.86%	14.5652	+4.27%
+Random Forest	Autoregressive	15	1.58s	8.8240	+0.47%	14.7093	+3.32%
+Linear Regression	Expanded	28	0.02s	8.7372	+1.45%	14.4180	+5.23%
+Random Forest	Expanded	28	2.67s	8.5835	+3.19%	14.2214	+6.53%
+Linear Regression	Full	38	0.02s	8.9056	-0.45% (degraded)	14.4665	+4.92%
+Random Forest (Selected)	Full	38	3.48s	8.4270	+4.95%	14.0050	+7.95%
 
  Rationale for Selecting Random Forest (Full)
 - Multicollinearity Sensitivity in Linear Models: Atmospheric co-pollutants (`CO`, `PM10`, `NO2`) exhibit high mutual correlation (Spearman $\rho \approx 0.88$). In Linear Regression, multicollinearity increases coefficient variance and degraded MAE to $8.9056\,\mu\text{g}/\text{m}^3$ (performing worse than persistence).
