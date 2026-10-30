@@ -1,4 +1,4 @@
-AirCast — Air Quality Trend Predictor
+**AirCast — Air Quality Trend Predictor**
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14-blue.svg)](https://www.python.org/)
 [![Status](https://img.shields.io/badge/status-submission%20ready-brightgreen.svg)]()
